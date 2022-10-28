@@ -1,0 +1,15 @@
+{
+    "id": 1234,
+    "nome": "Bruna",
+    "cpf": "11111111",
+    "data_nascimento": "12-12-1994",
+    "endereco": [
+        {
+            "tipo": "casa",
+            "CEP": "111",
+            "rua": "rua 1",
+            "numero": "1",
+            "Complemento": " ap"
+        }
+    ]
+}
