@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class customer (models.Model):
+class customer(models.Model):
 
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=50)
@@ -18,7 +18,16 @@ class customer (models.Model):
     active = models.BooleanField(default=True)
 
     def __str__(self):
-        return f"(self.first_name) (self.last_name)"
+        return f"{self.first_name} {self.last_name}"
+    
+    def get_full_phone_number(self):
+        return f"({self.area_code}) {self.phone_number}"
+    
+    def get_full_name(self):
+        return f"{ self.first_name} {self.last_name}"
+    
+    def get_full_city(self):
+        return f"{self.city} - {self.state}"
     
     class Meta:
         db_table = "customer"
