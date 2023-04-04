@@ -1,0 +1,21 @@
+{% extends "model-page.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    
+    {% if form.errors %}
+        {% for fild in form %}
+            {% for error in fild.errors %}
+                <div class="alert alert-danger">
+                    <storng> {{error|escape }}</storng>
+                </div>
+            {% endfor %}    
+        {% endfor %}
+    {%endif %}
+
+
+    <form method='POST'>{% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+
+{% endblock %}
