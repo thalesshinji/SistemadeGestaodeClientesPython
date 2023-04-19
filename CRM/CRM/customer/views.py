@@ -7,6 +7,7 @@ from django.urls import reverse
 from django.shortcuts import get_object_or_404
 class CustomerListView(ListView) :
     template_name = "customer/customer_list.html"
+    paginate_by = 10
     model = customer
     queryset = customer.objects.all()
 
